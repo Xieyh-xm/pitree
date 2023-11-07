@@ -1,12 +1,10 @@
 import os
 import numpy as np
 import tensorflow as tf
-import fixed_env_hotdash as env
+from env import fixed_env_hotdash as env
 import multiprocessing as mp
-import a3c_hotdash
-import a3c
-import load_trace
-import get_reward
+from a3c import a3c, a3c_hotdash
+from utils import get_reward, load_trace
 
 ################################################################
 

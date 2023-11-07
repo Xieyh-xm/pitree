@@ -10,10 +10,7 @@ import numpy as np
 import time
 import socket
 
-import robustmpc
-import pensieve
-import hotdash
-
+from algo import robustmpc, pensieve, hotdash
 
 IP_PORT = 9999
 

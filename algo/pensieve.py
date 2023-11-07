@@ -1,17 +1,17 @@
 import os
 import numpy as np
 import tensorflow as tf
-import fixed_env as env
-import a3c
-import load_trace
-from get_reward import get_reward
+from env import fixed_env as env
+from a3c import a3c
+from utils import load_trace
+from utils.get_reward import get_reward
 
 S_INFO = 6  # bit_rate, buffer_size, next_chunk_size, bandwidth_measurement(throughput and time), chunk_til_video_end
 S_LEN = 8  # take how many frames in the past
 A_DIM = 6
 ACTOR_LR_RATE = 0.0001
 CRITIC_LR_RATE = 0.001
-VIDEO_BIT_RATE = [300,750,1200,1850,2850,4300]  # Kbps
+VIDEO_BIT_RATE = [300, 750, 1200, 1850, 2850, 4300]  # Kbps
 BITRATE_REWARD = [1, 2, 3, 12, 15, 20]
 BUFFER_NORM_FACTOR = 10.0
 CHUNK_TIL_VIDEO_END_CAP = 48.0
@@ -87,12 +87,12 @@ class Pensieve:
                 # [time_ms, bit_rate, buff, volume, time, reward]
                 # log time_stamp, bit_rate, buffer_size, reward
                 log_file.write(bytes(str(time_stamp / M_IN_K) + '\t' +
-                               str(VIDEO_BIT_RATE[bit_rate]) + '\t' +
-                               str(buffer_size) + '\t' +
-                               str(rebuf) + '\t' +
-                               str(video_chunk_size) + '\t' +
-                               str(delay) + '\t' +
-                               str(reward) + '\n', encoding='utf-8'))
+                                     str(VIDEO_BIT_RATE[bit_rate]) + '\t' +
+                                     str(buffer_size) + '\t' +
+                                     str(rebuf) + '\t' +
+                                     str(video_chunk_size) + '\t' +
+                                     str(delay) + '\t' +
+                                     str(reward) + '\n', encoding='utf-8'))
                 log_file.flush()
 
             # retrieve previous state

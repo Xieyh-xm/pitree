@@ -1,9 +1,9 @@
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 import pickle as pk
-import fixed_env as env
-import load_trace
-from get_reward import get_reward
+from env import fixed_env as env
+from utils import load_trace
+from utils.get_reward import get_reward
 
 
 S_INFO = 5  # bit_rate, buffer_size, rebuffering_time, bandwidth_measurement, chunk_til_video_end

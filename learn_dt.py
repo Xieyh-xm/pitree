@@ -5,16 +5,11 @@ from sklearn.externals.six import StringIO
 import pydotplus
 import pickle as pk
 import csv
-import pensieve
-import pensiedt
-import robustmpc
-import robustmdt
-import hotdash
-import hotdadt
+from dt import pensiedt, robustmdt, hotdadt
+from algo import robustmpc, pensieve, hotdash
 import argparse
-import load_trace
-import fixed_env as env
-import fixed_env_hotdash as env_hotdash
+from utils import load_trace
+from env import fixed_env as env, fixed_env_hotdash as env_hotdash
 from multiprocessing import Pool
 import time
 
@@ -189,7 +184,7 @@ if __name__ == '__main__':
     #         max_reward = reward
 
     # save decision tree to file
-    with open('decision_tree/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.pk3', 'wb') as f:
+    with open('dt/' + args.abr + '_' + args.traces + '_' + str(args.leaf_nodes) + '.pk3', 'wb') as f:
         pk.dump(best_tree, f)
 
     if args.visualize:

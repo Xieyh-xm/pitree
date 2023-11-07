@@ -7,10 +7,7 @@ from socketserver import ThreadingMixIn
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from datetime import datetime
 import numpy as np
-import robustmpc
-import pensieve
-import hotdash
-
+from algo import robustmpc, pensieve, hotdash
 
 import argparse
 

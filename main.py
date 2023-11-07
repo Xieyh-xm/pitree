@@ -1,9 +1,5 @@
-import pensieve
-import robustmpc
-import hotdash
-import pensiedt
-import robustmdt
-import hotdadt
+from algo import robustmpc, pensieve, hotdash
+from dt import pensiedt, robustmdt, hotdadt
 import argparse
 
 

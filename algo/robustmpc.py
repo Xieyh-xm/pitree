@@ -1,10 +1,10 @@
 import numpy as np
-import fixed_env as env
-import load_trace
+from env import fixed_env as env
+from utils import load_trace
 import matplotlib.pyplot as plt
 import itertools
-from get_reward import get_reward
-from get_chunk_size import get_chunk_size
+from utils.get_reward import get_reward
+from utils.get_chunk_size import get_chunk_size
 
 S_INFO = 5  # bit_rate, buffer_size, rebuffering_time, bandwidth_measurement, chunk_til_video_end
 S_LEN = 8  # take how many frames in the past

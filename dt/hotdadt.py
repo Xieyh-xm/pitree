@@ -1,9 +1,8 @@
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 import pickle as pk
-import fixed_env_hotdash as env
-import load_trace
-
+from env import fixed_env_hotdash as env
+from utils import load_trace
 
 # bit_rate, buffer_size, next_chunk_size, bandwidth_measurement(throughput and time), chunk_til_video_end
 S_ABR_INFO = 6
